@@ -37,7 +37,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
+function playGame() {
     let userScore = 0;
     let computerScore = 0;
     for (let i = 0; i < 5; i++) {
@@ -80,3 +80,5 @@ function game() {
 //const playerInput = "RocK";
 //const playerLowerCaseInput = playerInput.toLowerCase();
 //const computerSelection = computerPlay(); //this constant is cahnged within the scope of game() by re-declaring. it does not need to exist outside the game() function
+
+playGame();
