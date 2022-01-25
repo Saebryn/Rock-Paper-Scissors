@@ -80,9 +80,17 @@ function playGame() {
         else {
             finalResultDiv.textContent = "You tied!";
         }
+        newGameButton.style.display = "block";
+    } 
+}
+
+function newGame() {
     userScore = 0;
     computerScore = 0;
-    }
+    roundResultDiv.textContent = "";
+    scoreDiv.textContent = "";
+    finalResultDiv.textContent = "";
+    newGameButton.style.display = "none";
 }
 
 const roundResultDiv = document.querySelector('.roundResult');
@@ -97,6 +105,10 @@ buttons.forEach((button) => {
     button.addEventListener('click', playGame)
 });
 
+const newGameButton = document.querySelector('.newGameButton');
+newGameButton.addEventListener('click', newGame);
+newGameButton.style.display = "none";
+
 
 
     
@@ -109,3 +121,4 @@ buttons.forEach((button) => {
 //const computerSelection = computerPlay(); //this constant is cahnged within the scope of game() by re-declaring. it does not need to exist outside the game() function
 
 //playGame();
+
