@@ -8,5 +8,9 @@ pokemon battle results on a timer?
 
 final result as a grid: my choices over his choices with X or saturation
 
+first to 6 wins
+
+6 pokeballs and they go away with losses
+
 
 
