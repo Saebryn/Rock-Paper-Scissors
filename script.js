@@ -6,79 +6,106 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return `Its a tie! You both chose ${playerSelection}`
+        roundResultDiv.textContent = `Its a tie! You both chose ${playerSelection}`
     }
     else if (playerSelection === "rock") {
         if (computerSelection === "scissors") {
-            return `You win! ${playerSelection} beats ${computerSelection}`;
+            roundResultDiv.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
         }
         else {
-            return `You lose! ${computerSelection} beats ${playerSelection}`;
+            roundResultDiv.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
         }
     }
     else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
-            return `You win! ${playerSelection} beats ${computerSelection}`;
+            roundResultDiv.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
         }
         else {
-            return `You lose! ${computerSelection} beats ${playerSelection}`;
+            roundResultDiv.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
         }
     }
     else if (playerSelection === "scissors") {
         if (computerSelection === "paper") {
-            return `You win! ${playerSelection} beats ${computerSelection}`;
+            roundResultDiv.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
         }
         else {
-            return `You lose! ${computerSelection} beats ${playerSelection}`;
+            roundResultDiv.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
         }
     }
     else {
-        return `You did not input a valid choice!`;
+        roundResultDiv.textContent = `You did not input a valid choice!`;
     }
 }
 
+let userScore = 0;
+let computerScore = 0;
+
 function playGame() {
-    let userScore = 0;
-    let computerScore = 0;
-    for (let i = 0; i < 5; i++) {
-        const playerInput = prompt("Rock, Paper or Scissors?","");
-        let playerLowerCaseInput = playerInput.toLowerCase();
-        if (playerLowerCaseInput !== "rock" && playerLowerCaseInput !== "paper" && playerLowerCaseInput !== "scissors") {
-            do {
-                //console.log(`You did not input a valid choice!`);
-                const playerInput = prompt("You did not input a valid choice! Rock, Paper or Scissors?","");
-                playerLowerCaseInput = playerInput.toLowerCase();
-                //console.log(i);
-            }
-            while (playerLowerCaseInput !== "rock" && playerLowerCaseInput !== "paper" && playerLowerCaseInput !== "scissors")      
+
+    
+    console.log(this.classList[0]);
+
+    const playerInput = this.classList[0]; //prompt("Rock, Paper or Scissors?","");
+    /* const playerLowerCaseInput = playerInput.toLowerCase();
+    if (playerInput !== "rock" && playerInput !== "paper" && playerInput !== "scissors") {
+        do {
+            //console.log(`You did not input a valid choice!`);
+            const playerInput = prompt("You did not input a valid choice! Rock, Paper or Scissors?","");
+            playerLowerCaseInput = playerInput.toLowerCase();
+            //console.log(i);
         }
-        
-        const computerSelection = computerPlay();
-        playRound(playerLowerCaseInput, computerSelection);
-        console.log(playRound(playerLowerCaseInput, computerSelection));
-        if (playRound(playerLowerCaseInput, computerSelection).slice(0,8) === "You win!") {
-            userScore++;
-            //console.log(`Your Score: ${userScore}, Computer Score: ${computerScore}`);
+        while (playerLowerCaseInput !== "rock" && playerLowerCaseInput !== "paper" && playerLowerCaseInput !== "scissors")      
+    } */
+    
+    const computerSelection = computerPlay();
+    playRound(playerInput, computerSelection);
+    console.log(playRound(playerInput, computerSelection));
+    if (roundResultDiv.textContent.slice(0,8) === "You win!") {
+        userScore++;
+        //console.log(`Your Score: ${userScore}, Computer Score: ${computerScore}`);
+    }
+    else if (roundResultDiv.textContent.slice(0,8) === "You lose") {
+        computerScore++;
+        //console.log(`Your Score: ${userScore}, Computer Score: ${computerScore}`);
+    }
+    scoreDiv.textContent = `---Your Score: ${userScore}, Computer Score: ${computerScore}---`;
+
+    if (userScore == 5 || computerScore == 5) {
+        if (userScore > computerScore) {
+            finalResultDiv.textContent = "You've won Charlie!";
         }
-        else if (playRound(playerLowerCaseInput, computerSelection).slice(0,8) === "You lose") {
-            computerScore++;
-            //console.log(`Your Score: ${userScore}, Computer Score: ${computerScore}`);
+        else if (userScore < computerScore) {
+            finalResultDiv.textContent = "You lose! You get nothing!";
         }
-        console.log(`---Your Score: ${userScore}, Computer Score: ${computerScore}---`);
-    }
-    if (userScore > computerScore) {
-        console.log("You've won Charlie!");
-    }
-    else if (userScore < computerScore) {
-        console.log("You lose! You get nothing!");
-    }
-    else {
-        console.log("You tied!");
+        else {
+            finalResultDiv.textContent = "You tied!";
+        }
+    userScore = 0;
+    computerScore = 0;
     }
 }
+
+const roundResultDiv = document.querySelector('.roundResult');
+
+const scoreDiv = document.querySelector('.score');
+
+const finalResultDiv = document.querySelector('.finalResult');
+
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', playGame)
+});
+
+
+
+    
+    
+    
+
 
 //const playerInput = "RocK";
 //const playerLowerCaseInput = playerInput.toLowerCase();
 //const computerSelection = computerPlay(); //this constant is cahnged within the scope of game() by re-declaring. it does not need to exist outside the game() function
 
-playGame();
+//playGame();
