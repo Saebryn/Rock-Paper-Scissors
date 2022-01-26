@@ -1,0 +1,47 @@
+* {
+    border: solid 1px black;
+}
+
+img {
+    width: 95%;
+    height: 95%;
+    
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.buttons {
+    text-align: center;
+    display: flex;
+    flex: 1;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+.image {
+    height: 240px;
+    width: 240px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fire {
+    background-color: #ff5252;
+}
+
+
+
+.water {
+    background-color: #2e77fd;
+}
+
+.grass {
+    background-color: #0e8f0e;
+}
+

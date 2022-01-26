@@ -80,7 +80,7 @@ function newGame() {
     scoreDiv.textContent = "";
     finalResultDiv.textContent = "";
     buttons.forEach((button) => {
-        button.style.display = "inline";
+        button.style.display = "block";
     });
     newGameButton.style.display = "none";
 }
@@ -96,7 +96,7 @@ const scoreDiv = document.querySelector('.score');
 
 const finalResultDiv = document.querySelector('.finalResult');
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.buttons div');
 buttons.forEach((button) => {
     button.addEventListener('click', playGame)
 });
