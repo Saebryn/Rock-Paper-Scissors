@@ -12,5 +12,13 @@ first to 6 wins
 
 6 pokeballs and they go away with losses
 
+pokemon stadium background image
+
+attacking pokemon for win with feignted as loss
+
+both attacking for tie?
+
+
+
 
 

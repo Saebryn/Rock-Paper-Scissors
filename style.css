@@ -1,5 +1,5 @@
 * {
-    border: solid 1px black;
+    /* border: solid 1px black; */
 }
 
 img {
@@ -19,7 +19,7 @@ body {
     text-align: center;
     display: flex;
     flex: 1;
-    gap: 10px;
+    gap: 16px;
     justify-content: space-evenly;
 }
 
@@ -32,16 +32,54 @@ body {
 }
 
 .fire {
-    background-color: #ff5252;
+    padding: 2px;
+    background-image: linear-gradient(white, #ff4343);
+    border: solid 2px black;
+    border-radius: 10px;
+    box-shadow: 4px 4px gray;
 }
 
-
-
 .water {
-    background-color: #2e77fd;
+    padding: 2px;
+    background-image: linear-gradient(white, #2e77fd);
+    border: solid 2px black;
+    border-radius: 10px;
+    box-shadow: 4px 4px gray;
 }
 
 .grass {
-    background-color: #0e8f0e;
+    padding: 2px;
+    background-image: linear-gradient(white, #0e8f0e);
+    border: solid 2px black;
+    border-radius: 10px;
+    box-shadow: 4px 4px gray;
+}
+
+.header {
+    height: 100px;
+    width: 100%;
+    background-image: linear-gradient(gray, white, gray);
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.headerImage {
+    height: 100px;
+    width: auto;
+    border: none;
+}
+
+.headerGroup {
+    display: flex;
+    gap: 20px;
+}
+
+.playerHeaderScore,
+.rivalHeaderScore {
+    display: flex;
+    align-self: center;
+    font-size: 40px;
+    font-family: Roboto, sans-serif;
 }
 

@@ -47,12 +47,14 @@ function playGame() {
     playRound(playerInput, computerSelection);
     if (roundResultDiv.textContent.slice(0,8) === "You win!") {
         userScore++;
+        playerHeaderScore.textContent = userScore;
     }
     else if (roundResultDiv.textContent.slice(0,8) === "You lose") {
         computerScore++;
+        rivalHeaderScore.textContent = computerScore;
     }
 
-    header.textContent = `Choose your next Pokemon.`;
+    command.textContent = `Choose your next Pokemon.`;
     scoreDiv.textContent = `---Your Score: ${userScore}, Rival Score: ${computerScore}---`;
 
     if (userScore == 6 || computerScore == 6) {
@@ -75,7 +77,7 @@ function playGame() {
 function newGame() {
     userScore = 0;
     computerScore = 0;
-    header.textContent = `Choose your first Pokemon.`;
+    command.textContent = `Choose your first Pokemon.`;
     roundResultDiv.textContent = "";
     scoreDiv.textContent = "";
     finalResultDiv.textContent = "";
@@ -88,11 +90,15 @@ function newGame() {
 let userScore = 0;
 let computerScore = 0;
 
-const header = document.querySelector('.header');
+const command = document.querySelector('.command');
 
 const roundResultDiv = document.querySelector('.roundResult');
 
 const scoreDiv = document.querySelector('.score');
+
+const playerHeaderScore = document.querySelector('.playerHeaderScore')
+
+const rivalHeaderScore = document.querySelector('.rivalHeaderScore')
 
 const finalResultDiv = document.querySelector('.finalResult');
 
