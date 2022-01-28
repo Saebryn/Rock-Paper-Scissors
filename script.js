@@ -14,6 +14,10 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection === "fire") {
         if (computerSelection === "grass") {
             roundResultDiv.textContent = `You win! ${playerSelection} type beats ${computerSelection} type.`;
+            bulbAttack1.style.display = "block";
+            bulbAttack1.style.marginTop = "auto";
+            bulbAttack2.style.display = "block";
+            bulbAttack2.style.marginBottom = "auto";
         }
         else {
             roundResultDiv.textContent = `You lose! ${computerSelection} type beats ${playerSelection} type.`;
@@ -112,6 +116,9 @@ const buttons = document.querySelectorAll('.buttons div');
 buttons.forEach((button) => {
     button.addEventListener('click', playGame)
 });
+
+const bulbAttack1 = document.querySelector('.bulbAttack1');
+const bulbAttack2 = document.querySelector('.bulbAttack2');
 
 const newGameButton = document.querySelector('.newGameButton');
 newGameButton.addEventListener('click', newGame);

@@ -125,3 +125,9 @@ body .body {
     font-size: 36px;
     font-family: Roboto, sans-serif;
 }
+
+.field div img {
+    max-height: 300px;
+    max-width: 310px;
+    display: none;
+}
