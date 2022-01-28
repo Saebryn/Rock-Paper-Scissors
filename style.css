@@ -1,16 +1,33 @@
+body {
+    min-height: 810px;
+    min-width: 800px;
+    background-image: url('images/stadium.png');
+    background-repeat: no-repeat;
+    background-size: 100% 520px;
 
+}
 
 img {
     width: 95%;
     height: 95%;
-    
 }
 
 body {
+    height: 96vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+body .body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    padding: 0px;
+    margin: 0px;
 }
 
 .buttons {
@@ -59,7 +76,6 @@ body {
     background-image: linear-gradient(gray, white, gray);
     display: flex;
     justify-content: space-between;
-    
 }
 
 .headerImage {
@@ -81,3 +97,31 @@ body {
     font-family: Roboto, sans-serif;
 }
 
+.roundResult {
+    font-size: 30px;
+    font-family: Roboto, sans-serif;
+}
+
+.field {
+    width: 98%;
+    display: flex;
+    flex: 1 1 auto;
+    max-height: 420px;
+}
+
+.field div {
+    display: flex;
+    flex: 1 1 auto;
+    border: solid 2px black;
+    padding: 4px;
+}
+
+.command {
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+}
+
+.finalResult {
+    font-size: 36px;
+    font-family: Roboto, sans-serif;
+}

@@ -55,17 +55,20 @@ function playGame() {
     }
 
     command.textContent = `Choose your next Pokemon.`;
-    scoreDiv.textContent = `---Your Score: ${userScore}, Rival Score: ${computerScore}---`;
+    //scoreDiv.textContent = `---Your Score: ${userScore}, Rival Score: ${computerScore}---`;
 
     if (userScore == 6 || computerScore == 6) {
+        command.textContent = "";
         buttons.forEach((button) => {
             button.style.display = "none";
         });
         if (userScore > computerScore) {
             finalResultDiv.textContent = "You're the new Pokemon League Champion!";
+            finalResultDiv.style.lineHeight = "264px";
         }
         else if (userScore < computerScore) {
             finalResultDiv.textContent = "You ran out of Pokemon. You whited out...";
+            finalResultDiv.style.lineHeight = "264px";
         }
         else {
             finalResultDiv.textContent = "You tied!";
@@ -79,22 +82,25 @@ function newGame() {
     computerScore = 0;
     command.textContent = `Choose your first Pokemon.`;
     roundResultDiv.textContent = "";
-    scoreDiv.textContent = "";
+    //scoreDiv.textContent = "";
     finalResultDiv.textContent = "";
+    finalResultDiv.style.lineHeight = "0px";
     buttons.forEach((button) => {
         button.style.display = "block";
     });
     newGameButton.style.display = "none";
+    playerHeaderScore.textContent = "0";
+    rivalHeaderScore.textContent = "0";
 }
 
-let userScore = 0;
-let computerScore = 0;
+let userScore = 5;
+let computerScore = 5;
 
 const command = document.querySelector('.command');
 
 const roundResultDiv = document.querySelector('.roundResult');
 
-const scoreDiv = document.querySelector('.score');
+//const scoreDiv = document.querySelector('.score');
 
 const playerHeaderScore = document.querySelector('.playerHeaderScore')
 
