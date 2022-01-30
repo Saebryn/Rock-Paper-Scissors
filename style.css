@@ -112,8 +112,8 @@ body .body {
 .field div {
     display: flex;
     flex: 1 1 auto;
-    border: solid 2px black;
     padding: 4px;
+    min-height: 376px;
 }
 
 .command {
@@ -129,5 +129,23 @@ body .body {
 .field div img {
     max-height: 300px;
     max-width: 310px;
+    margin-left: auto;
+    margin-right: auto;
     display: none;
+}
+
+.leftField img {
+    margin-top: auto;
+}
+
+.rightField img {
+    margin-bottom: auto;
+}
+
+.newGameButton {
+    font-size: 36px;
+    font-family: Roboto, sans-serif;
+    padding: 20px;
+    border: solid 2px black;
+    border-radius: 20px;
 }
