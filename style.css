@@ -1,18 +1,9 @@
 body {
-    min-height: 810px;
+    min-height: 814px;
     min-width: 800px;
     background-image: url('images/stadium.png');
     background-repeat: no-repeat;
     background-size: 100% 520px;
-
-}
-
-img {
-    width: 95%;
-    height: 95%;
-}
-
-body {
     height: 96vh;
     display: flex;
     flex-direction: column;
@@ -20,6 +11,11 @@ body {
     align-items: center;
     padding: 0px;
     margin: 0px;
+}
+
+img {
+    width: 95%;
+    height: 95%;
 }
 
 body .body {
@@ -52,6 +48,8 @@ body .body {
     border: solid 2px black;
     border-radius: 10px;
     box-shadow: 4px 4px gray;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
 }
 
 .water {
@@ -60,6 +58,8 @@ body .body {
     border: solid 2px black;
     border-radius: 10px;
     box-shadow: 4px 4px gray;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
 }
 
 .grass {
@@ -68,6 +68,8 @@ body .body {
     border: solid 2px black;
     border-radius: 10px;
     box-shadow: 4px 4px gray;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
 }
 
 .header {
@@ -82,6 +84,11 @@ body .body {
     height: 100px;
     width: auto;
     border: none;
+}
+
+.playerPokeballs img {
+    height: 10px;
+    width: auto;
 }
 
 .headerGroup {

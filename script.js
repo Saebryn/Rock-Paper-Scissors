@@ -13,9 +13,11 @@ function playRound(playerSelection, computerSelection) {
         if (playerSelection === "fire") {
             playerCharAttack.style.display = "block";
             rivalCharAttack.style.display = "block";
+            rivalCharAttack.style.transform = "scaleX(-1)";
         }
         else if (playerSelection ==="water") {
             playerSquirtAttack.style.display = "block";
+            playerSquirtAttack.style.transform = "scaleX(-1)";
             rivalSquirtAttack.style.display = "block";
         }
         else {
@@ -32,6 +34,7 @@ function playRound(playerSelection, computerSelection) {
         else {
             roundResultDiv.textContent = `You lose! ${computerSelection} type beats ${playerSelection} type.`;
             playerCharFaint.style.display = "block";
+            playerCharFaint.style.transform = "scaleX(-1)";
             rivalSquirtAttack.style.display = "block";
         }
     }
@@ -39,11 +42,13 @@ function playRound(playerSelection, computerSelection) {
         if (computerSelection === "fire") {
             roundResultDiv.textContent = `You win! ${playerSelection} type beats ${computerSelection} type.`;
             playerSquirtAttack.style.display = "block";
+            playerSquirtAttack.style.transform = "scaleX(-1)";
             rivalCharFaint.style.display = "block";
         }
         else {
             roundResultDiv.textContent = `You lose! ${computerSelection} type beats ${playerSelection} type.`;
             playerSquirtFaint.style.display = "block";
+            playerSquirtFaint.style.transform = "scaleX(-1)";
             rivalBulbAttack.style.display = "block";
         }
     }
@@ -51,12 +56,15 @@ function playRound(playerSelection, computerSelection) {
         if (computerSelection === "water") {
             roundResultDiv.textContent = `You win! ${playerSelection} type beats ${computerSelection} type.`;
             playerBulbAttack.style.display = "block";
+            playerBulbAttack.style.transform = "scaleX(-1)";
             rivalSquirtFaint.style.display = "block";
         }
         else {
             roundResultDiv.textContent = `You lose! ${computerSelection} type beats ${playerSelection} type.`;
             playerBulbFaint.style.display = "block";
+            playerBulbFaint.style.transform = "scaleX(-1)";
             rivalCharAttack.style.display = "block";
+            rivalCharAttack.style.transform = "scaleX(-1)";
         }
     }
     else {
@@ -123,8 +131,10 @@ function newGame() {
     finalResultDiv.textContent = "";
     finalResultDiv.style.lineHeight = "0px";
     buttons.forEach((button) => {
-        button.style.display = "block";
+        button.style.display = "flex";
+        button.style.flexDirection = "column";
     });
+
     newGameButton.style.display = "none";
     playerHeaderScore.textContent = "0";
     rivalHeaderScore.textContent = "0";
@@ -149,8 +159,6 @@ let computerScore = 5;
 const command = document.querySelector('.command');
 
 const roundResultDiv = document.querySelector('.roundResult');
-
-//const scoreDiv = document.querySelector('.score');
 
 const playerHeaderScore = document.querySelector('.playerHeaderScore')
 
