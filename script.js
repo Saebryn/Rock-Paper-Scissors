@@ -92,11 +92,18 @@ function playGame() {
     playRound(playerInput, computerSelection);
     if (roundResultDiv.textContent.slice(0,8) === "You win!") {
         userScore++;
-        playerHeaderScore.textContent = userScore;
+        //playerHeaderScore.textContent = userScore;
+        //console.log(rivalPokeballCount);
+        rivalPokeballs.removeChild(rivalPokeballCount[6-userScore]);
+        //console.log(rivalPokeballCount);
+
     }
     else if (roundResultDiv.textContent.slice(0,8) === "You lose") {
         computerScore++;
-        rivalHeaderScore.textContent = computerScore;
+        //rivalHeaderScore.textContent = computerScore;
+        //console.log(playerPokeballCount);
+        playerPokeballs.removeChild(playerPokeballCount[computerScore-1]);
+        //console.log(playerPokeballCount);
     }
 
     command.textContent = `Choose your next Pokemon.`;
@@ -125,9 +132,18 @@ function playGame() {
 function newGame() {
     userScore = 0;
     computerScore = 0;
+    for (let i = 0; i < 6; i++) {
+        rivalPokeballs.appendChild(rivalPokeballCount[i]);
+        playerPokeballs.appendChild(playerPokeballCount[i]);
+    }
+    rivalPokeballCount.forEach((ball) => {
+        ball.style.display = "in-line";
+    });
+    playerPokeballCount.forEach((ball) => {
+        ball.style.display = "in-line";
+    });
     command.textContent = `Choose your first Pokemon.`;
     roundResultDiv.textContent = "";
-    //scoreDiv.textContent = "";
     finalResultDiv.textContent = "";
     finalResultDiv.style.lineHeight = "0px";
     buttons.forEach((button) => {
@@ -136,8 +152,8 @@ function newGame() {
     });
 
     newGameButton.style.display = "none";
-    playerHeaderScore.textContent = "0";
-    rivalHeaderScore.textContent = "0";
+    //playerHeaderScore.textContent = "0";
+    //rivalHeaderScore.textContent = "0";
 
     playerCharAttack.style.display = "none";
     playerCharFaint.style.display = "none";
@@ -153,16 +169,24 @@ function newGame() {
     rivalBulbFaint.style.display = "none";
 }
 
-let userScore = 5;
-let computerScore = 5;
+let userScore = 0;
+let computerScore = 0;
 
 const command = document.querySelector('.command');
 
 const roundResultDiv = document.querySelector('.roundResult');
 
-const playerHeaderScore = document.querySelector('.playerHeaderScore')
+//const playerHeaderScore = document.querySelector('.playerHeaderScore');
 
-const rivalHeaderScore = document.querySelector('.rivalHeaderScore')
+const playerPokeballs = document.querySelector('.playerPokeballs');
+
+const playerPokeballCount = document.querySelectorAll('.playerPokeballCount');
+
+//const rivalHeaderScore = document.querySelector('.rivalHeaderScore');
+
+const rivalPokeballs = document.querySelector('.rivalPokeballs');
+
+const rivalPokeballCount = document.querySelectorAll('.rivalPokeballCount');
 
 const finalResultDiv = document.querySelector('.finalResult');
 

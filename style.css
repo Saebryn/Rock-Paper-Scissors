@@ -82,12 +82,28 @@ body .body {
 
 .headerImage {
     height: 100px;
-    width: auto;
-    border: none;
+    width: 120px;
 }
 
-.playerPokeballs img {
-    height: 10px;
+.headerImagePokeball {
+    height: 100px;
+    width: auto;
+}
+
+.playerPokeballs,
+.rivalPokeballs {
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+}
+
+.rivalPokeballs {
+    justify-content: flex-end;
+}
+
+.playerPokeballs img,
+.rivalPokeballs img {
+    height: 30px;
     width: auto;
 }
 
@@ -96,13 +112,24 @@ body .body {
     gap: 20px;
 }
 
-.playerHeaderScore,
+.stats {
+    width: 202px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px 0px 4px 0px;
+    font-size: 30px;
+    font-family: Roboto, sans-serif;
+}
+
+/* .playerHeaderScore,
 .rivalHeaderScore {
     display: flex;
     align-self: center;
     font-size: 40px;
     font-family: Roboto, sans-serif;
-}
+} */
 
 .roundResult {
     font-size: 30px;
@@ -156,3 +183,4 @@ body .body {
     border: solid 2px black;
     border-radius: 20px;
 }
+

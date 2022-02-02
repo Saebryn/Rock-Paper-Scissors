@@ -18,6 +18,8 @@ attacking pokemon for win with feignted as loss
 
 both attacking for tie?
 
+sets of player/rivals. allow the user to select a character
+
 
 
 
