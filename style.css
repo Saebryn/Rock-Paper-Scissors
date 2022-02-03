@@ -206,6 +206,12 @@ body .body {
     display: block;
 }
 
+.field div .ashCharacter {
+    max-height: 390px;
+    width: auto;
+    margin-top: 0px;
+}
+
 .stats {
     display: none;
 }
