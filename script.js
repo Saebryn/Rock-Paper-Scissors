@@ -84,22 +84,14 @@ function playGame() {
     playRound(playerInput, computerSelection);
     if (roundResultDiv.textContent.slice(0,8) === "You win!") {
         userScore++;
-        //playerHeaderScore.textContent = userScore;
-        //console.log(rivalPokeballCount);
         rivalPokeballs.removeChild(rivalPokeballCount[6-userScore]);
-        //console.log(rivalPokeballCount);
-
     }
     else if (roundResultDiv.textContent.slice(0,8) === "You lose") {
         computerScore++;
-        //rivalHeaderScore.textContent = computerScore;
-        //console.log(playerPokeballCount);
         playerPokeballs.removeChild(playerPokeballCount[computerScore-1]);
-        //console.log(playerPokeballCount);
     }
 
-    command.textContent = `Choose your next Pokemon.`;
-    //scoreDiv.textContent = `---Your Score: ${userScore}, Rival Score: ${computerScore}---`;
+    command.textContent = `Choose your next Pokémon.`;
 
     if (userScore == 6 || computerScore == 6) {
         command.textContent = "";
@@ -107,11 +99,11 @@ function playGame() {
             button.style.display = "none";
         });
         if (userScore > computerScore) {
-            finalResultDiv.textContent = "You're the new Pokemon League Champion!";
+            finalResultDiv.textContent = "You're the new Pokémon League Champion!";
             finalResultDiv.style.lineHeight = "220px";
         }
         else if (userScore < computerScore) {
-            finalResultDiv.textContent = "You ran out of Pokemon. You whited out...";
+            finalResultDiv.textContent = "You ran out of Pokémon. You whited out...";
             finalResultDiv.style.lineHeight = "220px";
         }
         else {
@@ -134,7 +126,7 @@ function newGame() {
     playerPokeballCount.forEach((ball) => {
         ball.style.display = "in-line";
     });
-    command.textContent = `Choose your first Pokemon.`;
+    command.textContent = `Choose your first Pokémon.`;
     roundResultDiv.textContent = "";
     finalResultDiv.textContent = "";
     finalResultDiv.style.lineHeight = "0px";
@@ -144,8 +136,6 @@ function newGame() {
     });
 
     newGameButton.style.display = "none";
-    //playerHeaderScore.textContent = "0";
-    //rivalHeaderScore.textContent = "0";
 
     playerCharAttack.style.display = "none";
     playerCharFaint.style.display = "none";
@@ -189,13 +179,9 @@ const command = document.querySelector('.command');
 
 const roundResultDiv = document.querySelector('.roundResult');
 
-//const playerHeaderScore = document.querySelector('.playerHeaderScore');
-
 const playerPokeballs = document.querySelector('.playerPokeballs');
 
 const playerPokeballCount = document.querySelectorAll('.playerPokeballCount');
-
-//const rivalHeaderScore = document.querySelector('.rivalHeaderScore');
 
 const rivalPokeballs = document.querySelector('.rivalPokeballs');
 
@@ -233,7 +219,6 @@ const zoeyHeaderImage = document.querySelector('.zoeyHeaderImage');
 const garyHeaderImage = document.querySelector('.garyHeaderImage');
 
 const headerStats = document.querySelectorAll('.stats');
-
 
 const newGameButton = document.querySelector('.newGameButton');
 newGameButton.addEventListener('click', newGame);

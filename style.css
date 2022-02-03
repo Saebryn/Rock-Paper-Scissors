@@ -143,14 +143,6 @@ body .body {
     font-family: Roboto, sans-serif;
 }
 
-/* .playerHeaderScore,
-.rivalHeaderScore {
-    display: flex;
-    align-self: center;
-    font-size: 40px;
-    font-family: Roboto, sans-serif;
-} */
-
 .roundResult {
     font-size: 30px;
     font-family: Roboto, sans-serif;
@@ -233,4 +225,3 @@ body .body {
 .rightField .charAttack {
     transform: scaleX(-1);
 }
-
