@@ -1,0 +1,227 @@
+body {
+    min-height: 814px;
+    min-width: 800px;
+    background-image: url('images/stadium.png');
+    background-repeat: no-repeat;
+    background-size: 100% 520px;
+    height: 96vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+img {
+    width: 95%;
+    height: 95%;
+}
+
+body .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.buttons {
+    text-align: center;
+    display: flex;
+    flex: 1;
+    gap: 16px;
+    justify-content: space-evenly;
+}
+
+.image {
+    height: 240px;
+    width: 240px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.fire {
+    padding: 2px;
+    background-image: linear-gradient(white, #ff4343);
+    border: solid 2px black;
+    border-radius: 10px;
+    box-shadow: 4px 4px gray;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+    display: none;
+}
+
+.fire:active {
+    transform: translateY(4px);
+    box-shadow: 2px 2px gray;
+}
+
+.water {
+    padding: 2px;
+    background-image: linear-gradient(white, #2e77fd);
+    border: solid 2px black;
+    border-radius: 10px;
+    box-shadow: 4px 4px gray;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+    display: none;
+}
+
+.water:active {
+    transform: translateY(4px);
+    box-shadow: 2px 2px gray;
+}
+
+.grass {
+    padding: 2px;
+    background-image: linear-gradient(white, #0e8f0e);
+    border: solid 2px black;
+    border-radius: 10px;
+    box-shadow: 4px 4px gray;
+    font-size: 18px;
+    font-family: Roboto, sans-serif;
+    display: none;
+}
+
+.grass:active {
+    transform: translateY(4px);
+    box-shadow: 2px 2px gray;
+}
+
+.header {
+    height: 100px;
+    width: 100%;
+    background-image: linear-gradient(gray, white, gray);
+    display: flex;
+    justify-content: space-between;
+}
+
+.rivalImage img,
+.playerImage img {
+    height: 100px;
+    width: 120px;
+    display: none;
+}
+
+.headerImagePokeball {
+    height: 100px;
+    width: auto;
+}
+
+.playerPokeballs,
+.rivalPokeballs {
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+}
+
+.rivalPokeballs {
+    justify-content: flex-end;
+}
+
+.playerPokeballs img,
+.rivalPokeballs img {
+    height: 30px;
+    width: auto;
+}
+
+.headerGroup {
+    display: flex;
+    gap: 20px;
+}
+
+.stats {
+    width: 202px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px 0px 4px 0px;
+    font-size: 30px;
+    font-family: Roboto, sans-serif;
+}
+
+.roundResult {
+    font-size: 30px;
+    font-family: Roboto, sans-serif;
+}
+
+.field {
+    width: 98%;
+    display: flex;
+    flex: 1 1 auto;
+    max-height: 420px;
+    margin-bottom: auto;
+}
+
+.field div {
+    display: flex;
+    flex: 1 1 auto;
+    padding: 4px;
+    min-height: 376px;
+}
+
+.command {
+    font-size: 20px;
+    font-family: Roboto, sans-serif;
+}
+
+.finalResult {
+    font-size: 36px;
+    font-family: Roboto, sans-serif;
+}
+
+.field div img {
+    max-height: 300px;
+    max-width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+
+.leftField img {
+    margin-top: auto;
+}
+
+.rightField img {
+    margin-bottom: auto;
+}
+
+.field div .ashCharacter,
+.field div .dawnCharacter {
+    max-height: 340px;
+    width: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+}
+
+.field div .ashCharacter {
+    max-height: 390px;
+    width: auto;
+    margin-top: 0px;
+}
+
+.stats {
+    display: none;
+}
+
+.newGameButton {
+    font-size: 36px;
+    font-family: Roboto, sans-serif;
+    padding: 20px;
+    border: solid 2px black;
+    border-radius: 20px;
+}
+
+.leftField .squirtAttack,
+.leftField .charFaint, 
+.leftField .squirtFaint,
+.leftField .bulbAttack,
+.leftField .bulbFaint,
+.rightField .charAttack,
+.rightField .charAttack {
+    transform: scaleX(-1);
+}

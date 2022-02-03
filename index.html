@@ -4,9 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <title>Pokémon RPS</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="header">
+        <div class="headerGroup">
+            <div class="playerImage">
+                <img class="dawnHeaderImage" src="images/dawn.jpg">
+                <img class="ashHeaderImage" src="images/ash.png">
+            </div>
+            <div class="stats">
+                <div class="name">Player</div>
+                <div class="playerPokeballs">
+                    <img class="playerPokeballCount" src="images/pokeball.png">
+                    <img class="playerPokeballCount" src="images/pokeball.png">
+                    <img class="playerPokeballCount" src="images/pokeball.png">
+                    <img class="playerPokeballCount" src="images/pokeball.png">
+                    <img class="playerPokeballCount" src="images/pokeball.png">
+                    <img class="playerPokeballCount" src="images/pokeball.png">
+                </div>
+            </div>
+        </div>
+        <div class="pokeball"><img class="headerImagePokeball" src="images/pokeball.png"></div>
+        <div class="headerGroup">
+            <div class="stats">
+                <div class="name">Rival</div>
+                <div class="rivalPokeballs">
+                    <img class="rivalPokeballCount" src="images/pokeball.png">
+                    <img class="rivalPokeballCount" src="images/pokeball.png">
+                    <img class="rivalPokeballCount" src="images/pokeball.png">
+                    <img class="rivalPokeballCount" src="images/pokeball.png">
+                    <img class="rivalPokeballCount" src="images/pokeball.png">
+                    <img class="rivalPokeballCount" src="images/pokeball.png">
+                </div>
+            </div>
+            <div class="rivalImage">
+                <img class="zoeyHeaderImage" src="images/zoey.jpg">
+                <img class="garyHeaderImage" src="images/gary.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="roundResult">Choose your Character!</div>
+    <div class="field">
+        <div class="leftField">
+            <img class="charAttack" src="images/charAttack.jpeg">
+            <img class="charFaint" src="images/charFaint.jpeg">
+            <img class="squirtAttack" src="images/squirtAttack.webp">
+            <img class="squirtFaint" src="images/squirtFaint.jpg">
+            <img class="bulbAttack" src="images/bulbAttack.webp">
+            <img class="bulbFaint" src="images/bulbFaint.jpg">
+            <img class="dawnCharacter" src="images/dawnCharacter3.png">
+        </div>
+        <div class="rightField">
+            <img class="charAttack" src="images/charAttack.jpeg">
+            <img class="charFaint" src="images/charFaint.jpeg">
+            <img class="squirtAttack" src="images/squirtAttack.webp">
+            <img class="squirtFaint" src="images/squirtFaint.jpg">
+            <img class="bulbAttack" src="images/bulbAttack.webp">
+            <img class="bulbFaint" src="images/bulbFaint.jpg">
+            <img class="ashCharacter" src="images/ashCharacter3.png">
+        </div>
+
+    </div>
+    
+    <div class="body">        
+        <div class="finalResult"></div>
+        <div class="command"></div>
+        <div class="buttons">
+            <div class="fire">
+                <div class="image"><img src="images/charmander.png"></div>
+                <div>Charmander</div>
+            </div>
+            <div class="water">
+                <div class="image"><img src="images/squirtle.png"></div>
+                <div>Squirtle</div>
+            </div>
+            <div class="grass">
+                <div class="image"><img src="images/bulbasaur.png"></div>
+                <div>Bulbasaur</div>
+            </div>
+        </div>
+        <button class="newGameButton">New Game</button>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
