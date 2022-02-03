@@ -3,7 +3,7 @@ body {
     min-width: 800px;
     background-image: url('images/stadium.png');
     background-repeat: no-repeat;
-    background-size: 100% 520px;
+    background-size: 100% 560px;
     height: 96vh;
     display: flex;
     flex-direction: column;
