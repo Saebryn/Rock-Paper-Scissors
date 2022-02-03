@@ -50,6 +50,12 @@ body .body {
     box-shadow: 4px 4px gray;
     font-size: 18px;
     font-family: Roboto, sans-serif;
+    display: none;
+}
+
+.fire:active {
+    transform: translateY(4px);
+    box-shadow: 2px 2px gray;
 }
 
 .water {
@@ -60,6 +66,12 @@ body .body {
     box-shadow: 4px 4px gray;
     font-size: 18px;
     font-family: Roboto, sans-serif;
+    display: none;
+}
+
+.water:active {
+    transform: translateY(4px);
+    box-shadow: 2px 2px gray;
 }
 
 .grass {
@@ -70,6 +82,12 @@ body .body {
     box-shadow: 4px 4px gray;
     font-size: 18px;
     font-family: Roboto, sans-serif;
+    display: none;
+}
+
+.grass:active {
+    transform: translateY(4px);
+    box-shadow: 2px 2px gray;
 }
 
 .header {
@@ -80,9 +98,11 @@ body .body {
     justify-content: space-between;
 }
 
-.headerImage {
+.rivalImage img,
+.playerImage img {
     height: 100px;
     width: 120px;
+    display: none;
 }
 
 .headerImagePokeball {
@@ -141,6 +161,7 @@ body .body {
     display: flex;
     flex: 1 1 auto;
     max-height: 420px;
+    margin-bottom: auto;
 }
 
 .field div {
@@ -176,11 +197,34 @@ body .body {
     margin-bottom: auto;
 }
 
+.field div .ashCharacter,
+.field div .dawnCharacter {
+    max-height: 340px;
+    width: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+}
+
+.stats {
+    display: none;
+}
+
 .newGameButton {
     font-size: 36px;
     font-family: Roboto, sans-serif;
     padding: 20px;
     border: solid 2px black;
     border-radius: 20px;
+}
+
+.leftField .squirtAttack,
+.leftField .charFaint, 
+.leftField .squirtFaint,
+.leftField .bulbAttack,
+.leftField .bulbFaint,
+.rightField .charAttack,
+.rightField .charAttack {
+    transform: scaleX(-1);
 }
 

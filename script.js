@@ -11,60 +11,52 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         roundResultDiv.textContent = `Its a tie! You both chose a ${playerSelection} type.`
         if (playerSelection === "fire") {
-            playerCharAttack.style.display = "block";
-            rivalCharAttack.style.display = "block";
-            rivalCharAttack.style.transform = "scaleX(-1)";
+            playerCharAttack.style.display = "flex";
+            rivalCharAttack.style.display = "flex";
         }
         else if (playerSelection ==="water") {
-            playerSquirtAttack.style.display = "block";
-            playerSquirtAttack.style.transform = "scaleX(-1)";
-            rivalSquirtAttack.style.display = "block";
+            playerSquirtAttack.style.display = "flex";
+            rivalSquirtAttack.style.display = "flex";
         }
         else {
-            playerBulbAttack.style.display = "block";
-            rivalBulbAttack.style.display = "block";
+            playerBulbAttack.style.display = "flex";
+            rivalBulbAttack.style.display = "flex";
         }
     }
     else if (playerSelection === "fire") {
         if (computerSelection === "grass") {
             roundResultDiv.textContent = `You win! ${playerSelection} type beats ${computerSelection} type.`;
-            playerCharAttack.style.display = "block";
-            rivalBulbFaint.style.display = "block";
+            playerCharAttack.style.display = "flex";
+            rivalBulbFaint.style.display = "flex";
         }
         else {
             roundResultDiv.textContent = `You lose! ${computerSelection} type beats ${playerSelection} type.`;
-            playerCharFaint.style.display = "block";
-            playerCharFaint.style.transform = "scaleX(-1)";
-            rivalSquirtAttack.style.display = "block";
+            playerCharFaint.style.display = "flex";
+            rivalSquirtAttack.style.display = "flex";
         }
     }
     else if (playerSelection === "water") {
         if (computerSelection === "fire") {
             roundResultDiv.textContent = `You win! ${playerSelection} type beats ${computerSelection} type.`;
-            playerSquirtAttack.style.display = "block";
-            playerSquirtAttack.style.transform = "scaleX(-1)";
-            rivalCharFaint.style.display = "block";
+            playerSquirtAttack.style.display = "flex";
+            rivalCharFaint.style.display = "flex";
         }
         else {
             roundResultDiv.textContent = `You lose! ${computerSelection} type beats ${playerSelection} type.`;
-            playerSquirtFaint.style.display = "block";
-            playerSquirtFaint.style.transform = "scaleX(-1)";
-            rivalBulbAttack.style.display = "block";
+            playerSquirtFaint.style.display = "flex";
+            rivalBulbAttack.style.display = "flex";
         }
     }
     else if (playerSelection === "grass") {
         if (computerSelection === "water") {
             roundResultDiv.textContent = `You win! ${playerSelection} type beats ${computerSelection} type.`;
-            playerBulbAttack.style.display = "block";
-            playerBulbAttack.style.transform = "scaleX(-1)";
-            rivalSquirtFaint.style.display = "block";
+            playerBulbAttack.style.display = "flex";
+            rivalSquirtFaint.style.display = "flex";
         }
         else {
             roundResultDiv.textContent = `You lose! ${computerSelection} type beats ${playerSelection} type.`;
-            playerBulbFaint.style.display = "block";
-            playerBulbFaint.style.transform = "scaleX(-1)";
-            rivalCharAttack.style.display = "block";
-            rivalCharAttack.style.transform = "scaleX(-1)";
+            playerBulbFaint.style.display = "flex";
+            rivalCharAttack.style.display = "flex";
         }
     }
     else {
@@ -169,6 +161,27 @@ function newGame() {
     rivalBulbFaint.style.display = "none";
 }
 
+function characterSelect() {
+    const character = this.classList[0];
+
+    if (character === "ashCharacter") {
+        ashImage.style.display = "none";
+        dawnImage.style.display = "none";
+        ashHeaderImage.style.display = "flex";
+        garyHeaderImage.style.display = "flex";
+    }
+    else {
+        ashImage.style.display = "none";
+        dawnImage.style.display = "none";
+        dawnHeaderImage.style.display = "flex";
+        zoeyHeaderImage.style.display = "flex";
+    }
+    headerStats.forEach((stats) => {
+        stats.style.display = "flex";
+    })
+    newGame();
+}
+
 let userScore = 0;
 let computerScore = 0;
 
@@ -207,6 +220,20 @@ const rivalSquirtAttack = document.querySelector('.rightField .squirtAttack');
 const rivalSquirtFaint = document.querySelector('.rightField .squirtFaint');
 const rivalBulbAttack = document.querySelector('.rightField .bulbAttack');
 const rivalBulbFaint = document.querySelector('.rightField .bulbFaint');
+
+const ashImage = document.querySelector('.ashCharacter');
+ashImage.addEventListener('click', characterSelect);
+
+const dawnImage = document.querySelector('.dawnCharacter');
+dawnImage.addEventListener('click', characterSelect);
+
+const dawnHeaderImage = document.querySelector('.dawnHeaderImage');
+const ashHeaderImage = document.querySelector('.ashHeaderImage');
+const zoeyHeaderImage = document.querySelector('.zoeyHeaderImage');
+const garyHeaderImage = document.querySelector('.garyHeaderImage');
+
+const headerStats = document.querySelectorAll('.stats');
+
 
 const newGameButton = document.querySelector('.newGameButton');
 newGameButton.addEventListener('click', newGame);
